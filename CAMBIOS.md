@@ -48,7 +48,7 @@ Lo que cambié:
 - Los filtros siguen andando mientras carga.
 - El extra `servicio_disponible` se aplica antes de crear el ViewModel, para que la primera petición ya lo tome en cuenta.
 
-También cambié los `catch`: atrapo `IOException` (sin conexión) y `HttpException` (el servidor respondió con error), en vez de `Exception`, que se come también la cancelación de la corrutina.
+También ajusté los `catch`: el original solo atrapaba `IOException` (sin conexión) y agregué `HttpException` (el servidor respondió con error). No uso `Exception` a propósito, porque se comería también la cancelación de la corrutina.
 
 ## Cómo lo probé
 
